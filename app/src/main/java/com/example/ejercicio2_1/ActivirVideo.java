@@ -45,6 +45,14 @@ public class ActivirVideo extends AppCompatActivity {
         btnTomarVideo = (FloatingActionButton) findViewById(R.id.fbtnTomarVideo);
         btnSave = (Button) findViewById(R.id.btnSave);
         btnGalery = (Button) findViewById(R.id.btnGalery);
+
+        btnGalery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ActivityListarVideo.class);
+                startActivity(intent);
+            }
+        });
         
         btnTomarVideo.setOnClickListener(new View.OnClickListener() {
             @Override

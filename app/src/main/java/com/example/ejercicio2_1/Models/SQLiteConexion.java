@@ -1,5 +1,6 @@
 package com.example.ejercicio2_1.Models;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -23,4 +24,5 @@ public class SQLiteConexion extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(Transacciones.DropTableVideo);
         onCreate(sqLiteDatabase);
     }
+
 }
