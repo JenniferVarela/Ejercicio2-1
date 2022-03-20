@@ -8,32 +8,39 @@
     tools:context=".ActivityListarVideo">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:id="@+id/aclbtnAtras"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Atras" />
 
     <TextView
-        android:id="@+id/txtmytext"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Selecionar un video" />
 
-    <ListView
-        android:id="@+id/videolist"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    </ListView>
+        <Spinner
+            android:id="@+id/aclSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/aclbtnVerVideo"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ver" />
+    </LinearLayout>
 
     <VideoView
-        android:id="@+id/alVideoViewer"
-        android:layout_width="wrap_content"
+        android:id="@+id/aclVideoViwer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
 </LinearLayout>

@@ -32,7 +32,7 @@ public class ActivirVideo extends AppCompatActivity {
     VideoView video;
     FloatingActionButton btnTomarVideo;
     Button btnSave,btnGalery;
-    
+
     static final int PETICION_ACCESO_CAM = 100;
     static final int TAKE_VIDEO_REQUEST = 101;
 
@@ -40,11 +40,25 @@ public class ActivirVideo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        
+
         video = (VideoView) findViewById(R.id.videoView);
         btnTomarVideo = (FloatingActionButton) findViewById(R.id.fbtnTomarVideo);
-        btnSave = (Button) findViewById(R.id.btnSave);
+        //btnSave = (Button) findViewById(R.id.btnSave);
         btnGalery = (Button) findViewById(R.id.btnGalery);
+
+        btnTomarVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                permisos();
+            }
+        });
+
+       /* btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardarVideo();
+            }
+        });*/
 
         btnGalery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,28 +67,14 @@ public class ActivirVideo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
-        btnTomarVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                permisos();
-            }
-        });
-        
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                guardarVideo();
-            }
-        });
-        
+
     }
 
     private void guardarVideo() {
     }
 
     private void permisos() {
-        
+
         if (ContextCompat.checkSelfPermission(getApplicationContext(),  Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
         {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},PETICION_ACCESO_CAM);
